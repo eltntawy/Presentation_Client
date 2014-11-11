@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="backport-android-bluetooth2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/backport-android-bluetooth2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libs/backport-android-bluetooth2.jar!/" />
+    </SOURCES>
+  </library>
+</component>
