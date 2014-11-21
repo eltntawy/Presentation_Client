@@ -50,9 +50,9 @@ public class MainActivity extends Activity {
                 // get mac address from spinner
                 address = ((BluetoothDeviceInfo) blueSpinner.getSelectedItem()).getAddress();
 
-                Intent controlActivity = new Intent(getApplicationContext(),SlideNavigationActivity.class);
-                controlActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getApplicationContext().startActivity(controlActivity);
+                Intent slideNavigationActivity = new Intent(getApplicationContext(),SlideNavigationActivity.class);
+                slideNavigationActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(slideNavigationActivity);
             }
         });
         addBluetoothHostest();
@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
                 (this,R.id.bluSpinner,remoteDevicesList);
 
         blueSpinner.setAdapter(blueSpinnerAdepter);
+
 
     }
 
