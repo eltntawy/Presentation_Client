@@ -13,6 +13,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.SlideNavigationActivity" android:label="Slide Navigation"/>
+        <activity android:name=".activity.ControlActivity"/>
 
         <receiver android:name="backport.android.bluetooth.BluetoothIntentRedirector">
             <intent-filter>
