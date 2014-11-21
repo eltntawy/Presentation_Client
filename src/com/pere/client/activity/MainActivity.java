@@ -1,17 +1,15 @@
-package com.pere.client;
+package com.pere.client.activity;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.ParcelUuid;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import com.pere.client.R;
 import com.pere.client.com.pere.client.model.BluetoothDeviceAdepter;
 import com.pere.client.com.pere.client.model.BluetoothDeviceInfo;
 import com.pere.client.utils.Util;
