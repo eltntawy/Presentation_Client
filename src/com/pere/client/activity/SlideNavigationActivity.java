@@ -143,6 +143,27 @@ public class SlideNavigationActivity extends Activity implements View.OnClickLis
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroyConnection();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        destroyConnection();
+    }
+
+    public void destroyConnection() {
+        sendCommand("EOF");
 
         out.append("\n...In onPause()...");
 
@@ -160,8 +181,6 @@ public class SlideNavigationActivity extends Activity implements View.OnClickLis
             Util.AlertBox(this,"Fatal Error", "In onPause() and failed to close socket." + e2.getMessage() + ".");
         }
     }
-
-
     @Override
     public void onClick(View view) {
 
