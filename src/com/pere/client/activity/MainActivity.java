@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
+
 import com.pere.client.R;
 import com.pere.client.com.pere.client.model.BluetoothDeviceAdepter;
 import com.pere.client.com.pere.client.model.BluetoothDeviceInfo;
@@ -23,6 +25,7 @@ public class MainActivity extends Activity {
     // bluetooth devices spinner
     Spinner blueSpinner ;
     public static String address;
+    public static int timer ;
      StringBuffer out = new StringBuffer();
 
     private BluetoothAdapter btAdapter = null;
@@ -49,6 +52,8 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 // get mac address from spinner
                 address = ((BluetoothDeviceInfo) blueSpinner.getSelectedItem()).getAddress();
+
+                timer = Integer.parseInt(((TextView)findViewById(R.id.txtTimer)).getText().toString());
 
                 Intent slideNavigationActivity = new Intent(getApplicationContext(),SlideNavigationActivity.class);
                 slideNavigationActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

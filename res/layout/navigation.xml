@@ -2,33 +2,59 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" android:weightSum="1"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1"
               android:keepScreenOn="true">
 
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Up"
-            android:id="@+id/btnUp" android:layout_weight="0.59"/>
+            android:text="Start Count"
+            android:onClick="startCounter"
+            android:id="@+id/btnStartCounter"
+            android:layout_weight="1" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pause Count"
+            android:id="@+id/btnPause"
+            android:onClick="pauseCounter"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="40pt"
+        android:id="@+id/lblTimer" />
+
     <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:weightSum="1">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:weightSum="1">
         <Button
-                android:layout_width="165dp"
-                android:layout_height="249dp"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:text="Left"
-                android:id="@+id/btnLeft" android:layout_weight="0.60"/>
+                android:id="@+id/btnLeft" android:layout_weight="0.50"/>
         <Button
-                android:layout_width="186dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:text="Right"
-                android:id="@+id/btnRight"/>
+                android:id="@+id/btnRight"
+            android:layout_weight="0.50" />
     </LinearLayout>
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:text="Down"
-            android:id="@+id/btnDown"/>
 </LinearLayout>

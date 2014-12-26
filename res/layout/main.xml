@@ -4,6 +4,22 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Presentation Timer by minites"
+        android:id="@+id/lblTimerInput" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/txtTimer"
+        android:text="10" />
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -13,8 +29,12 @@
     <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layoutMode="opticalBounds"
             android:id="@+id/bluSpinner" android:spinnerMode="dialog"
-            android:clickable="true"/>
+            android:clickable="true"
+        android:layout_weight="0.19" />
+
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
