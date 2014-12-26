@@ -58,30 +58,41 @@ public class MainActivity extends Activity {
         addBluetoothHostest();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        addBluetoothHostest();
+
+    }
+
     private void addBluetoothHostest() {
 
-        Set<BluetoothDevice> remoteDevicesSet =
-                (Set<BluetoothDevice>) BluetoothAdapter.getDefaultAdapter().getBondedDevices();
+        try {
+            Set<BluetoothDevice> remoteDevicesSet =
+                    (Set<BluetoothDevice>) BluetoothAdapter.getDefaultAdapter().getBondedDevices();
 
 
-        List<BluetoothDeviceInfo> remoteDevicesList = new ArrayList<BluetoothDeviceInfo>();
+            List<BluetoothDeviceInfo> remoteDevicesList = new ArrayList<BluetoothDeviceInfo>();
 
-        for(BluetoothDevice device : remoteDevicesSet) {
-            remoteDevicesList.add(new BluetoothDeviceInfo(
-                    device.getName(),
-                    device.getAddress(),
-                    device.getBluetoothClass(),
-                    device.getUuids(),
-                    device.getBondState(),
-                    device.getType()
-            ));
+            for(BluetoothDevice device : remoteDevicesSet) {
+                remoteDevicesList.add(new BluetoothDeviceInfo(
+                        device.getName(),
+                        device.getAddress(),
+                        device.getBluetoothClass(),
+                        device.getUuids(),
+                        device.getBondState(),
+                        device.getType()
+                ));
+            }
+
+            SpinnerAdapter  blueSpinnerAdepter = new BluetoothDeviceAdepter
+                    (this,R.id.bluSpinner,remoteDevicesList);
+
+            blueSpinner.setAdapter(blueSpinnerAdepter);
+
+        } catch (NullPointerException ex) {
+
         }
-
-        SpinnerAdapter  blueSpinnerAdepter = new BluetoothDeviceAdepter
-                (this,R.id.bluSpinner,remoteDevicesList);
-
-        blueSpinner.setAdapter(blueSpinnerAdepter);
-
 
     }
 
