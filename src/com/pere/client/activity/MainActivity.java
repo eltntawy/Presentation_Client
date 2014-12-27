@@ -79,15 +79,29 @@ public class MainActivity extends Activity {
 
             List<BluetoothDeviceInfo> remoteDevicesList = new ArrayList<BluetoothDeviceInfo>();
 
+
             for(BluetoothDevice device : remoteDevicesSet) {
-                remoteDevicesList.add(new BluetoothDeviceInfo(
-                        device.getName(),
-                        device.getAddress(),
-                        device.getBluetoothClass(),
-                        device.getUuids(),
-                        device.getBondState(),
-                        device.getType()
-                ));
+
+                try {
+                    remoteDevicesList.add(new BluetoothDeviceInfo(
+                            device.getName(),
+                            device.getAddress(),
+                            device.getBluetoothClass(),
+                            device.getUuids(),
+                            device.getBondState(),
+                            device.getType()
+                    ));
+                }catch (NoSuchMethodError e) {
+                    remoteDevicesList.add(new BluetoothDeviceInfo(
+                            device.getName(),
+                            device.getAddress(),
+                            device.getBluetoothClass(),
+                            null,
+                            device.getBondState(),
+                            0
+                    ));
+                }
+
             }
 
             SpinnerAdapter  blueSpinnerAdepter = new BluetoothDeviceAdepter

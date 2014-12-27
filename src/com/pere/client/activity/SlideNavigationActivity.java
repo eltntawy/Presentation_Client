@@ -80,7 +80,7 @@ public class SlideNavigationActivity extends Activity implements View.OnClickLis
 
         public void run() {
 
-            if(timerSecond > 0) {
+            if(timerSecond >= 0) {
                 int secs = timerSecond % 60;
                 int mins = (timerSecond / 60) % 60;
                 int hour = (timerSecond /60 )/ 60;
